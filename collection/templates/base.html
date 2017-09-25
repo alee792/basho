@@ -1,0 +1,39 @@
+{% load staticfiles %}
+<!doctype html>
+<html>
+    <head>
+        <title>
+             {% block title %}
+                BASHO
+             {% endblock title %}
+        </title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.5.3/css/bulma.min.css">
+        <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+        {% block header %}{% endblock header %}
+    </head>
+    <body>
+        <nav class="navbar is-transparent">
+            <div class="navbar-brand">
+                
+                <a class="navbar-item" href="#">
+                    <h1 class="has-text-weight-semibold is-size-3">basho</h1>
+                </a>
+            </div>
+            <div class="navbar-menu">
+                <div class="navbar-start">
+                    <div class="navbar-item">
+                        <a href="{% url 'home' %}">Home</a>
+                    </div>
+                    <div class="navbar-item">
+                        <a href="{% url 'about' %}">About</a>
+                    </div>
+                    <div class="navbar-item">
+                        <a href="{% url 'contact' %}">Contact</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        {% block content %}{% endblock content %}
+        {% block footer %}{% endblock footer %}
+    </body>
+</html>

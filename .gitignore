@@ -1,0 +1,10 @@
+# Django stuff:
+*.log
+.static_storage/
+.media/
+local_settings.py
+*.sqlite3
+
+*.pyc
+config.py
+
