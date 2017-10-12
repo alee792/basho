@@ -18,15 +18,15 @@ class Submission(models.Model):
     score = models.IntegerField()
     subreddit = models.CharField(max_length=255)
     author = models.CharField(max_length=255)
-    ts_mu = models.DecimalField(default=25)
-    ts_sigma = models.DecimalField(default=8.333)
+    ts_mu = models.DecimalField(default=25, max_digits=9, decimal_places=5)
+    ts_sigma = models.DecimalField(default=8.333, max_digits=9, decimal_places=5)
 
     @property
     def ts_rating(self):
-        return Rating(self.ts_mu, self.ts_sigma)
+        return self.ts_mu - 3 * self.ts_sigma
 
     @classmethod
-    def create(cls,subreddit_name, time_period, limit):
+    def create(cls, subreddit_name, time_period, limit=30):
 
         reddit = praw.Reddit(client_id=config.client_id, 
                      client_secret=config.client_secret, 
@@ -41,4 +41,4 @@ class Submission(models.Model):
             model_dict['author'] = submission_dict['author'].name
             model_dict['created_utc'] = datetime.datetime.fromtimestamp(model_dict['created_utc']).replace(tzinfo=pytz.UTC)
             print(model_dict)
-            cls(**model_dict)
+            cls(**model_dict).save()

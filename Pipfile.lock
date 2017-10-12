@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "fcc16eb548855ebc5db543a538be6507ef8fa6c6f987c3a65e0492cce78c64cd"
+            "sha256": "de7dfbd7945668730d8d28c01afa655b15ca207244f7680cd6153b80d0f8d634"
         },
         "host-environment-markers": {
             "implementation_name": "cpython",
@@ -16,7 +16,7 @@
             "python_version": "3.5",
             "sys_platform": "linux"
         },
-        "pipfile-spec": 5,
+        "pipfile-spec": 6,
         "requires": {
             "python_version": "3.5"
         },
@@ -45,10 +45,17 @@
         },
         "django": {
             "hashes": [
-                "sha256:89162f70a74aac62a53f975128faba6099a7ef2c9d8140a41ae9d6210bda05cd",
-                "sha256:1836878162dfdf865492bacfdff0321e4ee8f1e7d51d93192546000b54982b29"
+                "sha256:7ab6a9c798a5f9f359ee6da3677211f883fb02ef32cebe9b29751eb7a871febf",
+                "sha256:c3b42ca1efa1c0a129a9e863134cc3fe705c651dea3a04a7998019e522af0c60"
             ],
-            "version": "==1.11.5"
+            "version": "==1.11.6"
+        },
+        "djangorestframework": {
+            "hashes": [
+                "sha256:1fef387752b204fc3f8dbd1e4091f4a896a90fec812f92a87c45d35c307d7c7e",
+                "sha256:8ba4908d9fe4d78a8459fe86922e434006d491d4486086d23b19cd0975a3dba5"
+            ],
+            "version": "==3.7.0"
         },
         "idna": {
             "hashes": [
